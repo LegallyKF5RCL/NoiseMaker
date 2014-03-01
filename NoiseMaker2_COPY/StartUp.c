@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,10 +12,10 @@
 //#define UART_ENABLED
 
 //function declarations
-void OpenTimer1( unsigned int config, unsigned int period);
-void ConfigIntTimer1(unsigned int config);
-void WriteTimer1( unsigned int timer);
-void OpenUART1(unsigned int config1,unsigned int config2, unsigned int ubrg);
+//void OpenTimer1( unsigned int config, unsigned int period);
+//void ConfigIntTimer1(unsigned int config);
+//void WriteTimer1( unsigned int timer);
+//void OpenUART1(unsigned int config1,unsigned int config2, unsigned int ubrg);
 
 void StartUp (void)
 {
@@ -48,8 +49,10 @@ void StartUp (void)
             ,
             39062       //proc every quarter second
             );
+    while(1);
 #endif
 
+    //this code is awful - Brian
 #ifdef UART_ENABLED
 #warning DEBUG_UART_ENABLED
     OpenUART1(UART_EN &         //config1

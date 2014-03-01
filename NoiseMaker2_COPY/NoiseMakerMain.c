@@ -163,8 +163,9 @@ void __attribute__ ((auto_psv))     _ISR    _T1Interrupt(void)
 {
     _T1IF = 0;          //clear interrupt flag
     
-    LATBbits.LATB7 ^= 0xFFFF;
-          
+    //LATBbits.LATB7 ^= 1;
+    LATB ^= 0xFFFF;
+
     return;
 }
 
@@ -174,20 +175,12 @@ void __attribute__ ((auto_psv))     _ISR    _T2Interrupt(void)
 
     static WORD i = 0;
 
-        OpenTimer1(T1_ON &
-            T1_IDLE_CON &
-            T1_GATE_OFF &
-            T1_PS_1_8 &
-            T1_SYNC_EXT_OFF &
-            T1_SOURCE_INT
-            ,
-            //tone
-                Song[i] / 4
-            );
+        //tone
+        PR1 = Song[i] >> 2;
 
         i++;
 
-        if (i == SONG_LENGTH)
+        if (i >= SONG_LENGTH)
         {
             i = 0;
         }

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=NoiseMaker2
+PROJECTNAME=NoiseMaker2_COPY
 
 # Active Configuration
 DEFAULTCONF=default
