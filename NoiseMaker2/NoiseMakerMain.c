@@ -176,7 +176,7 @@ void __attribute__ ((auto_psv))     _ISR    _T2Interrupt(void)
     static WORD i = 0;
 
         //tone
-        PR1 = Song[i] >> 2;
+        PR1 = Song[i] >> 3;
 
         i++;
 
